@@ -10,4 +10,8 @@ import SwiftUI
 
 class RouteManager: ObservableObject {
     @Published var path: NavigationPath = NavigationPath()
+    
+//    init() {
+//        path.append(Route.Page.AddTodo)
+//    }
 }

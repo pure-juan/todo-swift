@@ -2,7 +2,7 @@
 //  LightTheme.swift
 //  Todos
 //
-//  Created by Juan Kim on 8/30/24.
+//  Created by 찌오 on 8/30/24.
 //
 
 import Foundation
@@ -18,4 +18,9 @@ struct LightTheme: ThemeProtocol {
     var elevated: Color { Color(hex: 0xFFFFFF) }
     
     var textForeground: Color { Color(hex: 0x575767) }
+    
+    var headline: Font { .system(size: 34).bold() }
+    var medium: Font { .system(size: 18).bold() }
+    var normal: Font { .system(size: 14) }
+    var caption: Font { .system(size: 12) }
 }

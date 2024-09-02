@@ -2,7 +2,7 @@
 //  ThemeProtocol.swift
 //  Todos
 //
-//  Created by Juan Kim on 8/30/24.
+//  Created by 찌오 on 8/30/24.
 //
 
 import Foundation
@@ -18,4 +18,9 @@ protocol ThemeProtocol {
     var elevated: Color { get }
     
     var textForeground: Color { get }
+    
+    var headline: Font { get }
+    var medium: Font { get }
+    var normal: Font { get }
+    var caption: Font { get }
 }

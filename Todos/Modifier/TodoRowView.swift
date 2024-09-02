@@ -2,7 +2,7 @@
 //  TodoColumn.swift
 //  Todos
 //
-//  Created by Juan Kim on 8/29/24.
+//  Created by 찌오 on 8/29/24.
 //
 
 import SwiftUI

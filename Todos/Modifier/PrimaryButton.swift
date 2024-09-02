@@ -2,7 +2,7 @@
 //  PrimaryButton.swift
 //  Todos
 //
-//  Created by Juan Kim on 8/30/24.
+//  Created by 찌오 on 8/30/24.
 //
 
 import SwiftUI

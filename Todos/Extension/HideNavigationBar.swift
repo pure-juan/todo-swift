@@ -2,7 +2,7 @@
 //  HideNavigationBar.swift
 //  Todos
 //
-//  Created by Juan Kim on 9/2/24.
+//  Created by 찌오 on 9/2/24.
 //
 
 import Foundation

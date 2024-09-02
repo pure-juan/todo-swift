@@ -1,8 +1,8 @@
 //
-//  Checkbox.swift
+//  ToggleButtonStyle.swift
 //  Todos
 //
-//  Created by 찌오 on 8/30/24.
+//  Created by Juan Kim on 9/2/24.
 //
 
 import Foundation
@@ -28,5 +28,15 @@ struct ToggleCheckboxStyle: ToggleStyle {
         }
         .buttonStyle(PlainButtonStyle())
         .disabled(!isEnabled)
+    }
+}
+
+extension Color {
+    init(hex: Int, opacity: Double = 1.0) {
+        let red = Double((hex >> 16) & 0xff) / 255
+        let green = Double((hex >> 8) & 0xff) / 255
+        let blue = Double(hex & 0xff) / 255
+        
+        self.init(.sRGB, red: red, green: green, blue: blue, opacity: opacity)
     }
 }

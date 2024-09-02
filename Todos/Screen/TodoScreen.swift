@@ -2,7 +2,7 @@
 //  AppView.swift
 //  Todos
 //
-//  Created by Juan Kim on 8/29/24.
+//  Created by 찌오 on 8/29/24.
 //
 
 import Foundation
@@ -12,17 +12,34 @@ import RealmSwift
 struct TodoScreen: View {
     @EnvironmentObject private var themeManager: ThemeManager
     @StateObject var viewModel: TodoViewModel = TodoViewModel()
-    @ObservedResults(Todo.self) var todos
+    @ObservedResults(
+        Todo.self,
+        configuration: RealmManager.config,
+        sortDescriptor: SortDescriptor(keyPath: "isDone", ascending: true)
+    ) var todos
+    
+    var sortedTodos: [Todo] {
+        return todos.sorted { lhs, rhs in
+            if lhs.isDone {
+                return false
+            } else {
+                if lhs.isAllDay != rhs.isAllDay {
+                    return true
+                }
+                return lhs.targetDateTime < rhs.targetDateTime
+            }
+        }
+    }
     
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
                 Text("Tasks")
-                    .font(.system(size: 34).bold())
+                    .headline()
                 Spacer()
                     .frame(height: 35)
                 List {
-                    ForEach(todos, id: \.self.id) { todo in
+                    ForEach(sortedTodos, id: \.self.id) { todo in
                         TodoItemView(todo: todo, toggle: { _ in
                             viewModel.send(.toggleTodo(id: todo.id))
                         })
@@ -38,12 +55,12 @@ struct TodoScreen: View {
                 }
                 .listStyle(.plain)
                 .overlay {
-                    if todos.isEmpty {
+                    if sortedTodos.isEmpty {
                         VStack {
                             Text("No items")
-                                .font(.system(size: 34).bold())
+                                .headline()
                             Text("Press the plus button to add more")
-                                .font(.caption)
+                                .caption()
                         }
                     }
                 }
@@ -59,17 +76,16 @@ struct TodoScreen: View {
                 Image(systemName: "plus")
                     .resizable()
                     .frame(width: 18, height: 18)
+                    .padding(16)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
             }
-            .padding()
-            .background(Color.black)
-            .foregroundColor(.white)
-            .clipShape(Circle())
             .padding(16)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
-//        .onAppear {
-//            viewModel.send(.load)
-//        }
+        .onAppear {
+            viewModel.onApear()
+        }
     }
 }
-
