@@ -44,13 +44,18 @@ struct CreateTodoScreen: View {
                 Text(viewModel.isAllDay ? "Date": "Date / Time")
                     .medium()
                     .frame(width: 100, alignment: .leading)
-//                    .animation(.default, value: viewModel.isAllDay)
                 Spacer()
                     .frame(width: 30)
-                DatePicker("", selection: $viewModel.targetDateTime, in: Date()..., displayedComponents: viewModel.isAllDay ? [.date]: [.date, .hourAndMinute])
-                    .datePickerStyle(.compact)
-                    .focused($focusedField, equals: .dateTime)
-//                    .animation(.default, value: viewModel.isAllDay)
+                HStack {
+                    Text("~")
+                        .font(.title)
+                    DatePicker("", selection: $viewModel.targetDateTime, in: Date()..., displayedComponents: viewModel.isAllDay ? [.date]: [.date, .hourAndMinute])
+                        .labelsHidden()
+                        .datePickerStyle(.compact)
+                        .focused($focusedField, equals: .dateTime)
+                        .clipped()
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             Spacer()

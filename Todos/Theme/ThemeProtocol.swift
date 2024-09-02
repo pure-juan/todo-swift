@@ -18,6 +18,7 @@ protocol ThemeProtocol {
     var elevated: Color { get }
     
     var textForeground: Color { get }
+    var textDisabled: Color { get }
     
     var headline: Font { get }
     var medium: Font { get }

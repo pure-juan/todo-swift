@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct RootScreen: View {
     @StateObject var themeManager = ThemeManager()
@@ -25,5 +26,6 @@ struct RootScreen: View {
         }
         .environmentObject(themeManager)
         .environmentObject(navManager)
+        .environment(\.realmConfiguration, RealmManager.config)
     }
 }

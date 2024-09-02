@@ -18,6 +18,7 @@ struct LightTheme: ThemeProtocol {
     var elevated: Color { Color(hex: 0xFFFFFF) }
     
     var textForeground: Color { Color(hex: 0x575767) }
+    var textDisabled: Color { Color(hex: 0x737373) }
     
     var headline: Font { .system(size: 34).bold() }
     var medium: Font { .system(size: 18).bold() }

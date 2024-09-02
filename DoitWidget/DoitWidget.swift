@@ -43,18 +43,14 @@ struct DoitWidgetEntryView : View {
     @ObservedResults(
         Todo.self,
         configuration: RealmManager.config,
-        sortDescriptor: SortDescriptor(keyPath: "isDone", ascending: true)
+        filter: NSPredicate(format: "isDone == false AND targetDateTime BETWEEN {%@, %@}", argumentArray: [Date().startOfDate(), Date().endOfDate()])
     ) var todos
     var sortedTodos: [Todo] {
         return todos.sorted { lhs, rhs in
-            if lhs.isDone {
-                return false
-            } else {
-                if lhs.isAllDay != rhs.isAllDay {
-                    return true
-                }
-                return lhs.targetDateTime < rhs.targetDateTime
+            if lhs.isAllDay != rhs.isAllDay {
+                return true
             }
+            return lhs.targetDateTime < rhs.targetDateTime
         }
     }
     
@@ -68,41 +64,26 @@ struct DoitWidgetEntryView : View {
         VStack {
             ForEach(sortedTodos.prefix(3), id: \.self.id) { todo in
                 HStack(alignment: .top) {
-                    Button {
-                        
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 5.0)
-                                .inset(by: 2)
-                                .stroke(Color(hex: 0xDADADA), lineWidth: 2)
-                                .background(Color(hex: 0xFCFCFC))
-                                .frame(width: 24, height: 24)
-                            if todo.isDone {
-                                Image("checkbox_checkmark")
-                            }
-                        }
-                    }
-                    .buttonStyle(PlainButtonStyle())
+                    Checkbox(isOn: todo.isDone)
                     Spacer()
                         .frame(width: 10)
                     VStack(alignment: .leading) {
                         Text(todo.content)
+                            .font(.system(size: 16).bold())
                             .strikethrough(todo.isDone)
                             .foregroundStyle(Color(hex: 0x575767))
                             .bold()
                         Text(todo.isAllDay ? "all day" : formatter.string(from: todo.targetDateTime))
-//                            .caption()
+                            .font(.system(size: 12).bold())
                             .foregroundStyle(Color(hex: 0xA3A3A3))
                             .bold()
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 3)
                 }
-//                .todoRow()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color.white)
     }
 }
 
@@ -120,13 +101,13 @@ struct DoitWidget: Widget {
 extension ConfigurationAppIntent {
     fileprivate static var smiley: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
+//        intent.favoriteEmoji = "😀"
         return intent
     }
     
     fileprivate static var starEyes: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
+//        intent.favoriteEmoji = "🤩"
         return intent
     }
 }

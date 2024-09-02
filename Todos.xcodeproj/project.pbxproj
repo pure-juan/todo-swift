@@ -13,6 +13,11 @@
 		1D450A842C84822000653A37 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D450A832C84822000653A37 /* RouteManager.swift */; };
 		1D450A892C84B7C500653A37 /* CreateTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D450A882C84B7C500653A37 /* CreateTodoViewModel.swift */; };
 		1D450A8C2C84BA7900653A37 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D450A8B2C84BA7900653A37 /* HideKeyboard.swift */; };
+		1DCB72C62C85EBF900D7B52C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB72C42C85EBC300D7B52C /* Checkbox.swift */; };
+		1DCB72C92C85FEAF00D7B52C /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB72C82C85FEAF00D7B52C /* DateFormat.swift */; };
+		1DCB72CB2C8602DB00D7B52C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */; };
+		1DCB72CC2C86075400D7B52C /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB72C82C85FEAF00D7B52C /* DateFormat.swift */; };
+		1DCB72CD2C86075700D7B52C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */; };
 		1DE55E8A2C81F65D00ABE643 /* CreateTodoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE55E892C81F65D00ABE643 /* CreateTodoScreen.swift */; };
 		1DE55E8C2C820B5D00ABE643 /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE55E8B2C820B5D00ABE643 /* ToggleCheckboxStyle.swift */; };
 		C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602B24B2C7FFBD2007CE4E0 /* TodosApp.swift */; };
@@ -123,6 +128,9 @@
 		1D450A832C84822000653A37 /* RouteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		1D450A882C84B7C500653A37 /* CreateTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoViewModel.swift; sourceTree = "<group>"; };
 		1D450A8B2C84BA7900653A37 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		1DCB72C42C85EBC300D7B52C /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		1DCB72C82C85FEAF00D7B52C /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		1DE55E892C81F65D00ABE643 /* CreateTodoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoScreen.swift; sourceTree = "<group>"; };
 		1DE55E8B2C820B5D00ABE643 /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		C602B2482C7FFBD2007CE4E0 /* Todos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +236,23 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		1DCB72C32C85EBB400D7B52C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DCB72C42C85EBC300D7B52C /* Checkbox.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DCB72C72C85FEA300D7B52C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1DCB72C82C85FEAF00D7B52C /* DateFormat.swift */,
+				1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		C602B23F2C7FFBD2007CE4E0 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +280,7 @@
 		C602B24A2C7FFBD2007CE4E0 /* Todos */ = {
 			isa = PBXGroup;
 			children = (
+				1DCB72C72C85FEA300D7B52C /* Util */,
 				C64272492C85A684002E2761 /* Model */,
 				1D450A8A2C84BA0000653A37 /* Extension */,
 				1D450A7C2C8474C200653A37 /* ViewModel */,
@@ -347,13 +373,6 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C64272182C81AA59002E2761 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		C642722A2C85A3AA002E2761 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +385,7 @@
 		C642722F2C85A3AA002E2761 /* DoitWidget */ = {
 			isa = PBXGroup;
 			children = (
+				1DCB72C32C85EBB400D7B52C /* View */,
 				C64272302C85A3AA002E2761 /* DoitWidgetBundle.swift */,
 				C64272322C85A3AA002E2761 /* DoitWidgetLiveActivity.swift */,
 				C64272342C85A3AA002E2761 /* DoitWidget.swift */,
@@ -389,7 +409,6 @@
 		C6E43A942C806C0B00939EF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C64272182C81AA59002E2761 /* Common */,
 				C64272152C81A621002E2761 /* Todo */,
 			);
 			path = View;
@@ -514,7 +533,6 @@
 			);
 			mainGroup = C602B23F2C7FFBD2007CE4E0;
 			packageReferences = (
-				C602B2762C8004B2007CE4E0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				C64272012C815BD4002E2761 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = C602B2492C7FFBD2007CE4E0 /* Products */;
@@ -574,6 +592,7 @@
 				C602B27E2C800BC9007CE4E0 /* TodoItemView.swift in Sources */,
 				1D450A802C84750A00653A37 /* BaseViewModel.swift in Sources */,
 				C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */,
+				1DCB72C92C85FEAF00D7B52C /* DateFormat.swift in Sources */,
 				C642721E2C854621002E2761 /* HideNavigationBar.swift in Sources */,
 				1D450A7A2C84739F00653A37 /* Route.swift in Sources */,
 				C64272112C81A22F002E2761 /* LightTheme.swift in Sources */,
@@ -591,6 +610,7 @@
 				C602B2802C800C28007CE4E0 /* Todo.swift in Sources */,
 				C6E43A962C806C2400939EF8 /* TodoRowView.swift in Sources */,
 				C64272242C859125002E2761 /* Medium.swift in Sources */,
+				1DCB72CB2C8602DB00D7B52C /* DateUtil.swift in Sources */,
 				C64272142C81A3B6002E2761 /* ListRow.swift in Sources */,
 				C642720F2C81A1B9002E2761 /* ThemeManager.swift in Sources */,
 			);
@@ -621,10 +641,13 @@
 				C64272532C85B7DA002E2761 /* TodoRowView.swift in Sources */,
 				C64272372C85A3AA002E2761 /* AppIntent.swift in Sources */,
 				C64272562C85B8C6002E2761 /* ToggleButtonStyle.swift in Sources */,
+				1DCB72C62C85EBF900D7B52C /* Checkbox.swift in Sources */,
 				C64272312C85A3AA002E2761 /* DoitWidgetBundle.swift in Sources */,
 				C64272352C85A3AA002E2761 /* DoitWidget.swift in Sources */,
 				C64272482C85A670002E2761 /* Todo.swift in Sources */,
 				C642724F2C85A6ED002E2761 /* TodoModel.swift in Sources */,
+				1DCB72CD2C86075700D7B52C /* DateUtil.swift in Sources */,
+				1DCB72CC2C86075400D7B52C /* DateFormat.swift in Sources */,
 				C642724C2C85A6B0002E2761 /* RealmManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1065,14 +1088,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C602B2762C8004B2007CE4E0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.14.0;
-			};
-		};
 		C64272012C815BD4002E2761 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";

@@ -14,13 +14,19 @@ struct TodoScreen: View {
     @StateObject var viewModel: TodoViewModel = TodoViewModel()
     @ObservedResults(
         Todo.self,
-        configuration: RealmManager.config,
-        sortDescriptor: SortDescriptor(keyPath: "isDone", ascending: true)
-    ) var todos
+        filter: NSPredicate(format: "targetDateTime BETWEEN {%@, %@}", argumentArray: [Date().startOfDate(), Date().endOfDate()])
+    ) var todayTodos
     
-    var sortedTodos: [Todo] {
-        return todos.sorted { lhs, rhs in
+    var sortedTodayTodos: [Todo] {
+        return todayTodos.sorted { lhs, rhs in
             if lhs.isDone {
+                if rhs.isDone {
+                    if lhs.isAllDay != rhs.isAllDay {
+                        return false
+                    }
+                    return lhs.targetDateTime < rhs.targetDateTime
+                }
+                
                 return false
             } else {
                 if lhs.isAllDay != rhs.isAllDay {
@@ -34,12 +40,12 @@ struct TodoScreen: View {
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
-                Text("Tasks")
+                Text("Today Tasks")
                     .headline()
                 Spacer()
                     .frame(height: 35)
                 List {
-                    ForEach(sortedTodos, id: \.self.id) { todo in
+                    ForEach(sortedTodayTodos, id: \.self.id) { todo in
                         TodoItemView(todo: todo, toggle: { _ in
                             viewModel.send(.toggleTodo(id: todo.id))
                         })
@@ -55,7 +61,7 @@ struct TodoScreen: View {
                 }
                 .listStyle(.plain)
                 .overlay {
-                    if sortedTodos.isEmpty {
+                    if sortedTodayTodos.isEmpty {
                         VStack {
                             Text("No items")
                                 .headline()

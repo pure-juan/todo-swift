@@ -31,7 +31,7 @@ struct TodoItemView: View {
             VStack(alignment: .leading) {
                 Text(todo.content)
                     .strikethrough(todo.isDone)
-                    .foregroundStyle(themeManager.selectedTheme.textForeground)
+                    .foregroundStyle(todo.isDone ? themeManager.selectedTheme.textDisabled : themeManager.selectedTheme.textForeground)
                     .bold()
                 Text(todo.isAllDay ? "all day" : formatter.string(from: todo.targetDateTime))
                     .caption()
