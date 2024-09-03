@@ -18,4 +18,8 @@ extension Date {
         let modifiedDate = Calendar.current.date(byAdding: .day, value: 1, to: self.startOfDate())!
         return Calendar.current.date(byAdding: .second, value: -1, to: modifiedDate)!
     }
+    
+    func tomorrow() -> Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: self)!.startOfDate()
+    }
 }

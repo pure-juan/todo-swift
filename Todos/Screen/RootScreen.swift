@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct RootScreen: View {
+    @Environment(\.colorScheme) var colorScheme
     @StateObject var themeManager = ThemeManager()
     @StateObject var navManager = RouteManager()
     
@@ -21,8 +22,13 @@ struct RootScreen: View {
                         CreateTodoScreen()
                     case .Home:
                         TodoScreen()
+                    case .Calendar:
+                        TodoCalendarView()
                     }
                 }
+        }
+        .onAppear {
+            themeManager.detect(colorScheme: colorScheme)
         }
         .environmentObject(themeManager)
         .environmentObject(navManager)

@@ -89,7 +89,7 @@ struct DoitWidgetEntryView : View {
                 VStack {
                     Text("No tasks")
                         .font(.system(size: 24).bold())
-                    Text("so far so good")
+                    Text("so far so good!")
                         .font(.system(size: 14).bold())
                         .foregroundStyle(Color(hex: 0x737373))
                 }

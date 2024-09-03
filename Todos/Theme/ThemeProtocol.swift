@@ -17,8 +17,12 @@ protocol ThemeProtocol {
     var background: Color { get }
     var elevated: Color { get }
     
-    var textForeground: Color { get }
+    var textForeground: ColorPalette { get }
     var textDisabled: Color { get }
+    
+    var toggleBackground: Color { get }
+    var toggleForegound: Color { get }
+    var toggleBorder: Color { get }
     
     var headline: Font { get }
     var medium: Font { get }

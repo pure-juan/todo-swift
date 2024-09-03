@@ -16,7 +16,13 @@ struct TodoScreen: View {
         Todo.self,
         filter: NSPredicate(format: "targetDateTime BETWEEN {%@, %@}", argumentArray: [Date().startOfDate(), Date().endOfDate()])
     ) var todayTodos
+//    @ObservedResults(
+//        Todo.self,
+//        filter: NSPredicate(format: "targetDateTime >= %@", argumentArray: [Date().tomorrow()]),
+//        sortDescriptor: SortDescriptor(keyPath: "targetDateTime", ascending: true)
+//    ) var futureTodos
     
+    // FIXME: sort is incorrect
     var sortedTodayTodos: [Todo] {
         return todayTodos.sorted { lhs, rhs in
             if lhs.isDone {
@@ -26,8 +32,7 @@ struct TodoScreen: View {
                     }
                     return lhs.targetDateTime < rhs.targetDateTime
                 }
-                
-                return false
+                return true
             } else {
                 if lhs.isAllDay != rhs.isAllDay {
                     return true
@@ -49,6 +54,7 @@ struct TodoScreen: View {
                         TodoItemView(todo: todo, toggle: { _ in
                             viewModel.send(.toggleTodo(id: todo.id))
                         })
+                        .background(themeManager.selectedTheme.background)
                         .plainListRow()
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button {
@@ -78,18 +84,31 @@ struct TodoScreen: View {
             )
             .padding(15)
             
-            NavigationLink(value: Route.Page.AddTodo) {
-                Image(systemName: "plus")
-                    .resizable()
-                    .frame(width: 18, height: 18)
-                    .padding(16)
-                    .background(Color.black)
-                    .foregroundColor(.white)
-                    .clipShape(Circle())
+            VStack {
+                NavigationLink(value: Route.Page.Calendar) {
+                    Image(systemName: "calendar")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                        .padding(16)
+                        .background(themeManager.selectedTheme.primary)
+                        .foregroundStyle(themeManager.selectedTheme.primaryForeground)
+                        .clipShape(Circle())
+                }
+                NavigationLink(value: Route.Page.AddTodo) {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 18, height: 18)
+                        .padding(16)
+                        .background(themeManager.selectedTheme.primary)
+                        .foregroundColor(themeManager.selectedTheme.primaryForeground)
+                        .clipShape(Circle())
+                }
             }
             .padding(16)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
+        .background(themeManager.selectedTheme.background)
         .onAppear {
             viewModel.onApear()
         }

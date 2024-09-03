@@ -11,5 +11,6 @@ struct Route {
     enum Page {
         case Home
         case AddTodo
+        case Calendar
     }
 }

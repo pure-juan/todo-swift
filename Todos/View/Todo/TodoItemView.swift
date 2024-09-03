@@ -31,11 +31,12 @@ struct TodoItemView: View {
             VStack(alignment: .leading) {
                 Text(todo.content)
                     .strikethrough(todo.isDone)
-                    .foregroundStyle(todo.isDone ? themeManager.selectedTheme.textDisabled : themeManager.selectedTheme.textForeground)
+                    .foregroundStyle(todo.isDone ? themeManager.selectedTheme.textDisabled : themeManager.selectedTheme.textForeground.i500)
                     .bold()
                 Text(todo.isAllDay ? "all day" : formatter.string(from: todo.targetDateTime))
+                    .foregroundStyle(themeManager.selectedTheme.textDisabled)
+                    .strikethrough(todo.isDone)
                     .caption()
-                    .foregroundStyle(Color(hex: 0xA3A3A3))
                     .bold()
             }
             .frame(maxWidth: .infinity, alignment: .leading)

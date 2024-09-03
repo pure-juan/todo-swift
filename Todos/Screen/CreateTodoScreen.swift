@@ -32,10 +32,17 @@ struct CreateTodoScreen: View {
                 Spacer()
                     .frame(width: 30)
                 VStack {
-                    TextField("Content", text: $viewModel.content)
-                        .focused($focusedField, equals: .content)
+                    TextField(
+                        "Content",
+                        text: $viewModel.content,
+                        prompt: Text("Content")
+                            .foregroundColor(themeManager.selectedTheme.textDisabled)
+                    )
+                    .focused($focusedField, equals: .content)
+                    .foregroundStyle(themeManager.selectedTheme.textForeground.i500)
                     Divider()
                         .frame(height: 1)
+                        .background(themeManager.selectedTheme.textDisabled)
                 }
             }
             Spacer()
@@ -49,7 +56,11 @@ struct CreateTodoScreen: View {
                 HStack {
                     Text("~")
                         .font(.title)
+                        .foregroundStyle(themeManager.selectedTheme.textForeground.i500)
                     DatePicker("", selection: $viewModel.targetDateTime, in: Date()..., displayedComponents: viewModel.isAllDay ? [.date]: [.date, .hourAndMinute])
+                        .tint(themeManager.selectedTheme.primary)
+//                        .colorMultiply(themeManager.selectedTheme.textForeground.i500)
+//                        .colorInvert()
                         .labelsHidden()
                         .datePickerStyle(.compact)
                         .focused($focusedField, equals: .dateTime)
@@ -81,8 +92,8 @@ struct CreateTodoScreen: View {
                 Text("Done")
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
-                    .background(Color(hex: 0x171717))
-                    .foregroundStyle(.white)
+                    .background(themeManager.selectedTheme.primary)
+                    .foregroundStyle(themeManager.selectedTheme.primaryForeground)
                     .cornerRadius(12)
             }
         }

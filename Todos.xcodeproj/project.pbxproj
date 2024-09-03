@@ -56,10 +56,13 @@
 		C642724C2C85A6B0002E2761 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642724A2C85A6B0002E2761 /* RealmManager.swift */; };
 		C642724E2C85A6ED002E2761 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642724D2C85A6ED002E2761 /* TodoModel.swift */; };
 		C642724F2C85A6ED002E2761 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642724D2C85A6ED002E2761 /* TodoModel.swift */; };
-		C64272532C85B7DA002E2761 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E43A952C806C2400939EF8 /* TodoRowView.swift */; };
 		C642725D2C869462002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725C2C869462002E2761 /* HexColor.swift */; };
 		C64272602C869489002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725E2C86947E002E2761 /* HexColor.swift */; };
+		C64272622C86A37D002E2761 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272612C86A37D002E2761 /* DarkTheme.swift */; };
+		C64272642C86D33A002E2761 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272632C86D33A002E2761 /* ColorPalette.swift */; };
 		C6E43A962C806C2400939EF8 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E43A952C806C2400939EF8 /* TodoRowView.swift */; };
+		C6EB0B1F2C870F3100049086 /* TodoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB0B1E2C870F3100049086 /* TodoCalendarView.swift */; };
+		C6EB0B222C870F8200049086 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB0B212C870F8200049086 /* Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,7 +174,11 @@
 		C64272502C85AC46002E2761 /* DoitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoitWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C642725C2C869462002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		C642725E2C86947E002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		C64272612C86A37D002E2761 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
+		C64272632C86D33A002E2761 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		C6E43A952C806C2400939EF8 /* TodoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowView.swift; sourceTree = "<group>"; };
+		C6EB0B1E2C870F3100049086 /* TodoCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCalendarView.swift; sourceTree = "<group>"; };
+		C6EB0B212C870F8200049086 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +339,8 @@
 				C642720C2C819D74002E2761 /* ThemeProtocol.swift */,
 				C642720E2C81A1B9002E2761 /* ThemeManager.swift */,
 				C64272102C81A22F002E2761 /* LightTheme.swift */,
+				C64272612C86A37D002E2761 /* DarkTheme.swift */,
+				C64272632C86D33A002E2761 /* ColorPalette.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -372,6 +381,7 @@
 				C64272092C8191AD002E2761 /* RootScreen.swift */,
 				C602B2792C800667007CE4E0 /* TodoScreen.swift */,
 				1DE55E892C81F65D00ABE643 /* CreateTodoScreen.swift */,
+				C6EB0B1E2C870F3100049086 /* TodoCalendarView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -420,9 +430,18 @@
 		C6E43A942C806C0B00939EF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C6EB0B202C870F7500049086 /* Core */,
 				C64272152C81A621002E2761 /* Todo */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C6EB0B202C870F7500049086 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C6EB0B212C870F8200049086 /* Container.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +621,7 @@
 				C64272202C854D61002E2761 /* Headline.swift in Sources */,
 				C602B27E2C800BC9007CE4E0 /* TodoItemView.swift in Sources */,
 				1D450A802C84750A00653A37 /* BaseViewModel.swift in Sources */,
+				C64272642C86D33A002E2761 /* ColorPalette.swift in Sources */,
 				C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */,
 				1DCB72C92C85FEAF00D7B52C /* DateFormat.swift in Sources */,
 				C642721E2C854621002E2761 /* HideNavigationBar.swift in Sources */,
@@ -609,10 +629,12 @@
 				C64272112C81A22F002E2761 /* LightTheme.swift in Sources */,
 				C642721C2C81AC17002E2761 /* PrimaryButton.swift in Sources */,
 				C642720D2C819D74002E2761 /* ThemeProtocol.swift in Sources */,
+				C6EB0B222C870F8200049086 /* Container.swift in Sources */,
 				1DE55E8A2C81F65D00ABE643 /* CreateTodoScreen.swift in Sources */,
 				1D450A8C2C84BA7900653A37 /* HideKeyboard.swift in Sources */,
 				C642724E2C85A6ED002E2761 /* TodoModel.swift in Sources */,
 				1D450A892C84B7C500653A37 /* CreateTodoViewModel.swift in Sources */,
+				C64272622C86A37D002E2761 /* DarkTheme.swift in Sources */,
 				1D450A842C84822000653A37 /* RouteManager.swift in Sources */,
 				C642720A2C8191AD002E2761 /* RootScreen.swift in Sources */,
 				C64272222C854DD4002E2761 /* Caption.swift in Sources */,
@@ -624,6 +646,7 @@
 				C64272242C859125002E2761 /* Medium.swift in Sources */,
 				1DCB72CB2C8602DB00D7B52C /* DateUtil.swift in Sources */,
 				C64272142C81A3B6002E2761 /* ListRow.swift in Sources */,
+				C6EB0B1F2C870F3100049086 /* TodoCalendarView.swift in Sources */,
 				C642720F2C81A1B9002E2761 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,7 +674,6 @@
 			files = (
 				C64272332C85A3AA002E2761 /* DoitWidgetLiveActivity.swift in Sources */,
 				C64272602C869489002E2761 /* HexColor.swift in Sources */,
-				C64272532C85B7DA002E2761 /* TodoRowView.swift in Sources */,
 				C64272372C85A3AA002E2761 /* AppIntent.swift in Sources */,
 				1DCB72C62C85EBF900D7B52C /* Checkbox.swift in Sources */,
 				C64272312C85A3AA002E2761 /* DoitWidgetBundle.swift in Sources */,
@@ -830,7 +852,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=iphoneos*]" = "@executable_path/Frameworks";
@@ -881,7 +902,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
