@@ -12,6 +12,6 @@ import SwiftUI
 struct DoitWidgetBundle: WidgetBundle {
     var body: some Widget {
         DoitWidget()
-        DoitWidgetLiveActivity()
+//        DoitWidgetLiveActivity()
     }
 }

@@ -84,6 +84,17 @@ struct DoitWidgetEntryView : View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .overlay {
+            if todos.isEmpty {
+                VStack {
+                    Text("No tasks")
+                        .font(.system(size: 24).bold())
+                    Text("so far so good")
+                        .font(.system(size: 14).bold())
+                        .foregroundStyle(Color(hex: 0x737373))
+                }
+            }
+        }
     }
 }
 
@@ -95,6 +106,7 @@ struct DoitWidget: Widget {
             DoitWidgetEntryView(entry: entry)
                 .containerBackground(.white, for: .widget)
         }
+        .supportedFamilies([.systemMedium])
     }
 }
 

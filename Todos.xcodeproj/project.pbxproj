@@ -57,7 +57,8 @@
 		C642724E2C85A6ED002E2761 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642724D2C85A6ED002E2761 /* TodoModel.swift */; };
 		C642724F2C85A6ED002E2761 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642724D2C85A6ED002E2761 /* TodoModel.swift */; };
 		C64272532C85B7DA002E2761 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E43A952C806C2400939EF8 /* TodoRowView.swift */; };
-		C64272562C85B8C6002E2761 /* ToggleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272542C85B8C6002E2761 /* ToggleButtonStyle.swift */; };
+		C642725D2C869462002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725C2C869462002E2761 /* HexColor.swift */; };
+		C64272602C869489002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725E2C86947E002E2761 /* HexColor.swift */; };
 		C6E43A962C806C2400939EF8 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E43A952C806C2400939EF8 /* TodoRowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,7 +169,8 @@
 		C642724A2C85A6B0002E2761 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		C642724D2C85A6ED002E2761 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		C64272502C85AC46002E2761 /* DoitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoitWidgetExtension.entitlements; sourceTree = "<group>"; };
-		C64272542C85B8C6002E2761 /* ToggleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonStyle.swift; sourceTree = "<group>"; };
+		C642725C2C869462002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		C642725E2C86947E002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		C6E43A952C806C2400939EF8 /* TodoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 			children = (
 				1D450A8B2C84BA7900653A37 /* HideKeyboard.swift */,
 				C642721D2C854621002E2761 /* HideNavigationBar.swift */,
+				C642725C2C869462002E2761 /* HexColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 		C642722F2C85A3AA002E2761 /* DoitWidget */ = {
 			isa = PBXGroup;
 			children = (
+				C642725B2C86942E002E2761 /* Extensions */,
 				1DCB72C32C85EBB400D7B52C /* View */,
 				C64272302C85A3AA002E2761 /* DoitWidgetBundle.swift */,
 				C64272322C85A3AA002E2761 /* DoitWidgetLiveActivity.swift */,
@@ -392,7 +396,6 @@
 				C64272362C85A3AA002E2761 /* AppIntent.swift */,
 				C64272382C85A3AC002E2761 /* Assets.xcassets */,
 				C642723A2C85A3AD002E2761 /* Info.plist */,
-				C64272542C85B8C6002E2761 /* ToggleButtonStyle.swift */,
 			);
 			path = DoitWidget;
 			sourceTree = "<group>";
@@ -404,6 +407,14 @@
 				C642724D2C85A6ED002E2761 /* TodoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C642725B2C86942E002E2761 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C642725E2C86947E002E2761 /* HexColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C6E43A942C806C0B00939EF8 /* View */ = {
@@ -607,6 +618,7 @@
 				C64272222C854DD4002E2761 /* Caption.swift in Sources */,
 				C642724B2C85A6B0002E2761 /* RealmManager.swift in Sources */,
 				C602B27A2C800667007CE4E0 /* TodoScreen.swift in Sources */,
+				C642725D2C869462002E2761 /* HexColor.swift in Sources */,
 				C602B2802C800C28007CE4E0 /* Todo.swift in Sources */,
 				C6E43A962C806C2400939EF8 /* TodoRowView.swift in Sources */,
 				C64272242C859125002E2761 /* Medium.swift in Sources */,
@@ -638,9 +650,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64272332C85A3AA002E2761 /* DoitWidgetLiveActivity.swift in Sources */,
+				C64272602C869489002E2761 /* HexColor.swift in Sources */,
 				C64272532C85B7DA002E2761 /* TodoRowView.swift in Sources */,
 				C64272372C85A3AA002E2761 /* AppIntent.swift in Sources */,
-				C64272562C85B8C6002E2761 /* ToggleButtonStyle.swift in Sources */,
 				1DCB72C62C85EBF900D7B52C /* Checkbox.swift in Sources */,
 				C64272312C85A3AA002E2761 /* DoitWidgetBundle.swift in Sources */,
 				C64272352C85A3AA002E2761 /* DoitWidget.swift in Sources */,
@@ -802,6 +814,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Doit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -852,6 +865,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Doit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
