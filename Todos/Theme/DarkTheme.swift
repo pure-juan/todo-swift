@@ -36,6 +36,9 @@ struct DarkTheme: ThemeProtocol {
     var toggleForegound: Color { Color(hex: 0xDADADA) }
     var toggleBorder: Color { Color(hex: 0x717171) }
     
+    var tagBackground: Color { Color(hex: 0x464646) }
+    var tagForeground: Color { Color(hex: 0xFFFFFF) }
+    
     var headline: Font { .system(size: 34).bold() }
     var medium: Font { .system(size: 18).bold() }
     var normal: Font { .system(size: 14) }

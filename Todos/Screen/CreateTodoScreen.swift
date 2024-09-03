@@ -86,6 +86,7 @@ struct CreateTodoScreen: View {
             Spacer()
                 .frame(height: 50)
             Button {
+                focusedField = nil
                 viewModel.add()
                 routeManager.path.removeLast()
             } label: {

@@ -24,6 +24,9 @@ protocol ThemeProtocol {
     var toggleForegound: Color { get }
     var toggleBorder: Color { get }
     
+    var tagBackground: Color { get }
+    var tagForeground: Color { get }
+    
     var headline: Font { get }
     var medium: Font { get }
     var normal: Font { get }

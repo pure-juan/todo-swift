@@ -20,6 +20,8 @@
 		1DCB72CD2C86075700D7B52C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */; };
 		1DE55E8A2C81F65D00ABE643 /* CreateTodoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE55E892C81F65D00ABE643 /* CreateTodoScreen.swift */; };
 		1DE55E8C2C820B5D00ABE643 /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE55E8B2C820B5D00ABE643 /* ToggleCheckboxStyle.swift */; };
+		1DF38B872C874E090019AB48 /* TagModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF38B862C874E090019AB48 /* TagModifier.swift */; };
+		1DF38B8A2C874FF70019AB48 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF38B892C874FF70019AB48 /* Counter.swift */; };
 		C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602B24B2C7FFBD2007CE4E0 /* TodosApp.swift */; };
 		C602B2502C7FFBD4007CE4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C602B24F2C7FFBD4007CE4E0 /* Assets.xcassets */; };
 		C602B2542C7FFBD4007CE4E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C602B2532C7FFBD4007CE4E0 /* Preview Assets.xcassets */; };
@@ -137,6 +139,8 @@
 		1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		1DE55E892C81F65D00ABE643 /* CreateTodoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoScreen.swift; sourceTree = "<group>"; };
 		1DE55E8B2C820B5D00ABE643 /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
+		1DF38B862C874E090019AB48 /* TagModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModifier.swift; sourceTree = "<group>"; };
+		1DF38B892C874FF70019AB48 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		C602B2482C7FFBD2007CE4E0 /* Todos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C602B24B2C7FFBD2007CE4E0 /* TodosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosApp.swift; sourceTree = "<group>"; };
 		C602B24F2C7FFBD4007CE4E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,6 +267,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		1DF38B882C874FD40019AB48 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1DF38B892C874FF70019AB48 /* Counter.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		C602B23F2C7FFBD2007CE4E0 = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +367,7 @@
 				C642721F2C854D61002E2761 /* Headline.swift */,
 				C64272212C854DD4002E2761 /* Caption.swift */,
 				C64272232C859125002E2761 /* Medium.swift */,
+				1DF38B862C874E090019AB48 /* TagModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -430,6 +443,7 @@
 		C6E43A942C806C0B00939EF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DF38B882C874FD40019AB48 /* Common */,
 				C6EB0B202C870F7500049086 /* Core */,
 				C64272152C81A621002E2761 /* Todo */,
 			);
@@ -622,6 +636,7 @@
 				C602B27E2C800BC9007CE4E0 /* TodoItemView.swift in Sources */,
 				1D450A802C84750A00653A37 /* BaseViewModel.swift in Sources */,
 				C64272642C86D33A002E2761 /* ColorPalette.swift in Sources */,
+				1DF38B872C874E090019AB48 /* TagModifier.swift in Sources */,
 				C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */,
 				1DCB72C92C85FEAF00D7B52C /* DateFormat.swift in Sources */,
 				C642721E2C854621002E2761 /* HideNavigationBar.swift in Sources */,
@@ -639,6 +654,7 @@
 				C642720A2C8191AD002E2761 /* RootScreen.swift in Sources */,
 				C64272222C854DD4002E2761 /* Caption.swift in Sources */,
 				C642724B2C85A6B0002E2761 /* RealmManager.swift in Sources */,
+				1DF38B8A2C874FF70019AB48 /* Counter.swift in Sources */,
 				C602B27A2C800667007CE4E0 /* TodoScreen.swift in Sources */,
 				C642725D2C869462002E2761 /* HexColor.swift in Sources */,
 				C602B2802C800C28007CE4E0 /* Todo.swift in Sources */,
