@@ -20,8 +20,9 @@
 		1DCB72CD2C86075700D7B52C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */; };
 		1DE55E8A2C81F65D00ABE643 /* CreateTodoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE55E892C81F65D00ABE643 /* CreateTodoScreen.swift */; };
 		1DE55E8C2C820B5D00ABE643 /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE55E8B2C820B5D00ABE643 /* ToggleCheckboxStyle.swift */; };
-		1DF38B872C874E090019AB48 /* TagModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF38B862C874E090019AB48 /* TagModifier.swift */; };
-		1DF38B8A2C874FF70019AB48 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF38B892C874FF70019AB48 /* Counter.swift */; };
+		1DF38B902C88A0040019AB48 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF38B8F2C88A0040019AB48 /* Fonts.swift */; };
+		1DF38B912C88B11C0019AB48 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EB0B252C8826D200049086 /* Colors.xcassets */; };
+		1DF38B922C88B1340019AB48 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF38B8F2C88A0040019AB48 /* Fonts.swift */; };
 		C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602B24B2C7FFBD2007CE4E0 /* TodosApp.swift */; };
 		C602B2502C7FFBD4007CE4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C602B24F2C7FFBD4007CE4E0 /* Assets.xcassets */; };
 		C602B2542C7FFBD4007CE4E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C602B2532C7FFBD4007CE4E0 /* Preview Assets.xcassets */; };
@@ -34,9 +35,6 @@
 		C64272032C815BD4002E2761 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C64272022C815BD4002E2761 /* RealmSwift */; };
 		C64272062C81627A002E2761 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = C64272022C815BD4002E2761 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C642720A2C8191AD002E2761 /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272092C8191AD002E2761 /* RootScreen.swift */; };
-		C642720D2C819D74002E2761 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642720C2C819D74002E2761 /* ThemeProtocol.swift */; };
-		C642720F2C81A1B9002E2761 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642720E2C81A1B9002E2761 /* ThemeManager.swift */; };
-		C64272112C81A22F002E2761 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272102C81A22F002E2761 /* LightTheme.swift */; };
 		C64272142C81A3B6002E2761 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272132C81A3B6002E2761 /* ListRow.swift */; };
 		C642721C2C81AC17002E2761 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642721B2C81AC17002E2761 /* PrimaryButton.swift */; };
 		C642721E2C854621002E2761 /* HideNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642721D2C854621002E2761 /* HideNavigationBar.swift */; };
@@ -60,8 +58,6 @@
 		C642724F2C85A6ED002E2761 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642724D2C85A6ED002E2761 /* TodoModel.swift */; };
 		C642725D2C869462002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725C2C869462002E2761 /* HexColor.swift */; };
 		C64272602C869489002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725E2C86947E002E2761 /* HexColor.swift */; };
-		C64272622C86A37D002E2761 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272612C86A37D002E2761 /* DarkTheme.swift */; };
-		C64272642C86D33A002E2761 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64272632C86D33A002E2761 /* ColorPalette.swift */; };
 		C6E43A962C806C2400939EF8 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E43A952C806C2400939EF8 /* TodoRowView.swift */; };
 		C6EB0B1F2C870F3100049086 /* TodoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB0B1E2C870F3100049086 /* TodoCalendarView.swift */; };
 		C6EB0B222C870F8200049086 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB0B212C870F8200049086 /* Container.swift */; };
@@ -141,8 +137,7 @@
 		1DCB72CA2C8602DB00D7B52C /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		1DE55E892C81F65D00ABE643 /* CreateTodoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoScreen.swift; sourceTree = "<group>"; };
 		1DE55E8B2C820B5D00ABE643 /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
-		1DF38B862C874E090019AB48 /* TagModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModifier.swift; sourceTree = "<group>"; };
-		1DF38B892C874FF70019AB48 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		1DF38B8F2C88A0040019AB48 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C602B2482C7FFBD2007CE4E0 /* Todos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C602B24B2C7FFBD2007CE4E0 /* TodosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosApp.swift; sourceTree = "<group>"; };
 		C602B24F2C7FFBD4007CE4E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,9 +152,6 @@
 		C602B27D2C800BC9007CE4E0 /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
 		C602B27F2C800C28007CE4E0 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		C64272092C8191AD002E2761 /* RootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
-		C642720C2C819D74002E2761 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
-		C642720E2C81A1B9002E2761 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		C64272102C81A22F002E2761 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
 		C64272132C81A3B6002E2761 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		C642721B2C81AC17002E2761 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		C642721D2C854621002E2761 /* HideNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideNavigationBar.swift; sourceTree = "<group>"; };
@@ -180,8 +172,6 @@
 		C64272502C85AC46002E2761 /* DoitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoitWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C642725C2C869462002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		C642725E2C86947E002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
-		C64272612C86A37D002E2761 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
-		C64272632C86D33A002E2761 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		C6E43A952C806C2400939EF8 /* TodoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowView.swift; sourceTree = "<group>"; };
 		C6EB0B1E2C870F3100049086 /* TodoCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCalendarView.swift; sourceTree = "<group>"; };
 		C6EB0B212C870F8200049086 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -250,6 +240,7 @@
 				1D450A8B2C84BA7900653A37 /* HideKeyboard.swift */,
 				C642721D2C854621002E2761 /* HideNavigationBar.swift */,
 				C642725C2C869462002E2761 /* HexColor.swift */,
+				1DF38B8F2C88A0040019AB48 /* Fonts.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -274,7 +265,6 @@
 		1DF38B882C874FD40019AB48 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1DF38B892C874FF70019AB48 /* Counter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -315,7 +305,6 @@
 				C64272172C81A8FF002E2761 /* Screen */,
 				C64272162C81A8EF002E2761 /* Domain */,
 				C64272122C81A398002E2761 /* Modifier */,
-				C642720B2C819D67002E2761 /* Theme */,
 				C6E43A942C806C0B00939EF8 /* View */,
 				C602B24B2C7FFBD2007CE4E0 /* TodosApp.swift */,
 				C602B24F2C7FFBD4007CE4E0 /* Assets.xcassets */,
@@ -350,18 +339,6 @@
 			path = TodosUITests;
 			sourceTree = "<group>";
 		};
-		C642720B2C819D67002E2761 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				C642720C2C819D74002E2761 /* ThemeProtocol.swift */,
-				C642720E2C81A1B9002E2761 /* ThemeManager.swift */,
-				C64272102C81A22F002E2761 /* LightTheme.swift */,
-				C64272612C86A37D002E2761 /* DarkTheme.swift */,
-				C64272632C86D33A002E2761 /* ColorPalette.swift */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
 		C64272122C81A398002E2761 /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +349,6 @@
 				C642721F2C854D61002E2761 /* Headline.swift */,
 				C64272212C854DD4002E2761 /* Caption.swift */,
 				C64272232C859125002E2761 /* Medium.swift */,
-				1DF38B862C874E090019AB48 /* TagModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -627,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64272392C85A3AC002E2761 /* Assets.xcassets in Resources */,
+				1DF38B912C88B11C0019AB48 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,36 +619,30 @@
 				C64272202C854D61002E2761 /* Headline.swift in Sources */,
 				C602B27E2C800BC9007CE4E0 /* TodoItemView.swift in Sources */,
 				1D450A802C84750A00653A37 /* BaseViewModel.swift in Sources */,
-				C64272642C86D33A002E2761 /* ColorPalette.swift in Sources */,
-				1DF38B872C874E090019AB48 /* TagModifier.swift in Sources */,
 				C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */,
 				1DCB72C92C85FEAF00D7B52C /* DateFormat.swift in Sources */,
 				C642721E2C854621002E2761 /* HideNavigationBar.swift in Sources */,
 				C6EB0B242C87F29100049086 /* SettingScreen.swift in Sources */,
 				1D450A7A2C84739F00653A37 /* Route.swift in Sources */,
-				C64272112C81A22F002E2761 /* LightTheme.swift in Sources */,
 				C642721C2C81AC17002E2761 /* PrimaryButton.swift in Sources */,
-				C642720D2C819D74002E2761 /* ThemeProtocol.swift in Sources */,
 				C6EB0B222C870F8200049086 /* Container.swift in Sources */,
 				1DE55E8A2C81F65D00ABE643 /* CreateTodoScreen.swift in Sources */,
 				1D450A8C2C84BA7900653A37 /* HideKeyboard.swift in Sources */,
 				C642724E2C85A6ED002E2761 /* TodoModel.swift in Sources */,
 				1D450A892C84B7C500653A37 /* CreateTodoViewModel.swift in Sources */,
-				C64272622C86A37D002E2761 /* DarkTheme.swift in Sources */,
 				1D450A842C84822000653A37 /* RouteManager.swift in Sources */,
 				C642720A2C8191AD002E2761 /* RootScreen.swift in Sources */,
 				C64272222C854DD4002E2761 /* Caption.swift in Sources */,
 				C642724B2C85A6B0002E2761 /* RealmManager.swift in Sources */,
-				1DF38B8A2C874FF70019AB48 /* Counter.swift in Sources */,
 				C602B27A2C800667007CE4E0 /* TodoScreen.swift in Sources */,
 				C642725D2C869462002E2761 /* HexColor.swift in Sources */,
 				C602B2802C800C28007CE4E0 /* Todo.swift in Sources */,
 				C6E43A962C806C2400939EF8 /* TodoRowView.swift in Sources */,
 				C64272242C859125002E2761 /* Medium.swift in Sources */,
 				1DCB72CB2C8602DB00D7B52C /* DateUtil.swift in Sources */,
+				1DF38B902C88A0040019AB48 /* Fonts.swift in Sources */,
 				C64272142C81A3B6002E2761 /* ListRow.swift in Sources */,
 				C6EB0B1F2C870F3100049086 /* TodoCalendarView.swift in Sources */,
-				C642720F2C81A1B9002E2761 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +671,7 @@
 				C64272602C869489002E2761 /* HexColor.swift in Sources */,
 				C64272372C85A3AA002E2761 /* AppIntent.swift in Sources */,
 				1DCB72C62C85EBF900D7B52C /* Checkbox.swift in Sources */,
+				1DF38B922C88B1340019AB48 /* Fonts.swift in Sources */,
 				C64272312C85A3AA002E2761 /* DoitWidgetBundle.swift in Sources */,
 				C64272352C85A3AA002E2761 /* DoitWidget.swift in Sources */,
 				C64272482C85A670002E2761 /* Todo.swift in Sources */,

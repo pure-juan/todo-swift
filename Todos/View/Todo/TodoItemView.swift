@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct TodoItemView: View {
-    @EnvironmentObject var themeManager: ThemeManager
-    
     var todo: Todo
     let toggle: (Bool) -> ()
     
@@ -31,10 +29,10 @@ struct TodoItemView: View {
             VStack(alignment: .leading) {
                 Text(todo.content)
                     .strikethrough(todo.isDone)
-                    .foregroundStyle(todo.isDone ? themeManager.selectedTheme.textDisabled : themeManager.selectedTheme.textForeground.i500)
+                    .foregroundStyle(todo.isDone ? Color.textDisabled : Color.textDefault)
                     .bold()
                 Text(todo.isAllDay ? "all day" : formatter.string(from: todo.targetDateTime))
-                    .foregroundStyle(themeManager.selectedTheme.textDisabled)
+                    .foregroundStyle(Color.textDisabled)
                     .strikethrough(todo.isDone)
                     .caption()
                     .bold()
@@ -43,7 +41,7 @@ struct TodoItemView: View {
             .padding(.top, 3)
         }
         .todoRow()
-        .background(themeManager.selectedTheme.background)
+        .background(Color.background)
         .onTapGesture {
             toggle(!todo.isDone)
         }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingScreen: View {
-    @EnvironmentObject var themeManager: ThemeManager
     var body: some View {
         VStack {
             Button {
@@ -20,14 +19,14 @@ struct SettingScreen: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(themeManager.selectedTheme.secondary)
-                .foregroundStyle(themeManager.selectedTheme.secondaryForeground)
+                .background(Color.red)
+                .foregroundStyle(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
             }
         }
         .padding()
         .frame(maxHeight: .infinity, alignment: .topLeading)
-        .background(themeManager.selectedTheme.background)
+        .background(Color.background)
     }
 }
 

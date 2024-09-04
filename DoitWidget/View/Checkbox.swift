@@ -14,11 +14,13 @@ struct Checkbox: View {
         ZStack {
             RoundedRectangle(cornerRadius: 5.0)
                 .inset(by: 2)
-                .stroke(Color(hex: 0xDADADA), lineWidth: 2)
-                .background(Color(hex: 0xFCFCFC))
+                .stroke(Color.toggleBorder, lineWidth: 2)
+                .background(Color.toggleBackground)
                 .frame(width: 24, height: 24)
             if isOn {
                 Image("checkbox_checkmark")
+                    .renderingMode(.template)
+                    .tint(Color.toggleForeground)
             }
         }
     }

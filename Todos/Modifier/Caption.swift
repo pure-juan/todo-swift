@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct Caption: ViewModifier {
-    @EnvironmentObject var themeManager: ThemeManager
     func body(content: Content) -> some View {
         content
-            .font(themeManager.selectedTheme.caption)
-            .foregroundStyle(themeManager.selectedTheme.textForeground.i500)
+            .font(.captionNormal)
+            .foregroundStyle(Color.textCaption)
     }
 }
 

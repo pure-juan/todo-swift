@@ -10,7 +10,6 @@ import SwiftUI
 import RealmSwift
 
 struct TodoScreen: View {
-    @EnvironmentObject private var themeManager: ThemeManager
     @StateObject var viewModel: TodoViewModel = TodoViewModel()
     @ObservedResults(
         Todo.self,
@@ -109,7 +108,7 @@ struct TodoScreen: View {
                             TodoItemView(todo: todo, toggle: { _ in
                                 viewModel.send(.toggleTodo(id: todo.id))
                             })
-                            .background(themeManager.selectedTheme.background)
+                            .background(Color.background)
                             .plainListRow()
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button {
@@ -125,7 +124,7 @@ struct TodoScreen: View {
                         TodoItemView(todo: todo, toggle: { _ in
                             viewModel.send(.toggleTodo(id: todo.id))
                         })
-                        .background(themeManager.selectedTheme.background)
+                        .background(Color.background)
                         .plainListRow()
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button {
@@ -162,8 +161,8 @@ struct TodoScreen: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 18, height: 18)
                         .padding(16)
-                        .background(themeManager.selectedTheme.primary)
-                        .foregroundStyle(themeManager.selectedTheme.primaryForeground)
+                        .background(Color.primaryBackground)
+                        .foregroundStyle(Color.primaryForeground)
                         .clipShape(Circle())
                 }
                 NavigationLink(value: Route.Page.AddTodo) {
@@ -171,8 +170,8 @@ struct TodoScreen: View {
                         .resizable()
                         .frame(width: 18, height: 18)
                         .padding(16)
-                        .background(themeManager.selectedTheme.primary)
-                        .foregroundColor(themeManager.selectedTheme.primaryForeground)
+                        .background(Color.primaryBackground)
+                        .foregroundColor(Color.primaryForeground)
                         .clipShape(Circle())
                 }
             }
@@ -180,7 +179,7 @@ struct TodoScreen: View {
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
-        .background(themeManager.selectedTheme.background)
+        .background(Color.background)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             viewModel.onApear()

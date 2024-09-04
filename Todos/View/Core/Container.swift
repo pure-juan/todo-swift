@@ -9,14 +9,13 @@ import SwiftUI
 
 struct Container<Content>: View where Content: View {
     
-    @EnvironmentObject private var themeManager: ThemeManager
     @ViewBuilder let content: Content
     
     var body: some View {
         VStack(alignment: .leading) {
             content
         }
-        .background(themeManager.selectedTheme.background)
+        .background(Color.background)
     }
 }
 

@@ -10,7 +10,6 @@ import RealmSwift
 
 struct RootScreen: View {
     @Environment(\.colorScheme) var colorScheme
-    @StateObject var themeManager = ThemeManager()
     @StateObject var navManager = RouteManager()
     
     enum Tab {
@@ -23,15 +22,13 @@ struct RootScreen: View {
     var body: some View {
         NavigationStack(path: $navManager.path) {
             VStack {
-                TabView(selection: $selectedTab) {
-                    TodoScreen()
-                        .toolbar(.hidden, for: .bottomBar, .tabBar)
-                        .tag(Tab.todo)
-                    SettingScreen()
-                        .toolbar(.hidden, for: .bottomBar, .tabBar)
-                        .tag(Tab.setting)
+                Group {
+                    if selectedTab == .todo {
+                        TodoScreen()
+                    } else if selectedTab == .setting {
+                        SettingScreen()
+                    }
                 }
-                .toolbar(.hidden, for: .bottomBar, .tabBar)
                 .navigationDestination(for: Route.Page.self) { page in
                     switch page {
                     case .AddTodo:
@@ -42,16 +39,12 @@ struct RootScreen: View {
                         TodoCalendarView()
                     }
                 }
-                .safeAreaInset(edge: .bottom) {
-                    tabBar
-                }
             }
-            .background(themeManager.selectedTheme.background)
+            .safeAreaInset(edge: .bottom) {
+                tabBar
+            }
+            .background(Color.background)
         }
-        .onAppear {
-            themeManager.detect(colorScheme: colorScheme)
-        }
-        .environmentObject(themeManager)
         .environmentObject(navManager)
         .environment(\.realmConfiguration, RealmManager.config)
     }
@@ -69,6 +62,7 @@ struct RootScreen: View {
                     Text("Todos")
                 }
             }
+            .tint(selectedTab == .todo ? Color.tabActiveTint: Color.tabDisableTint)
             Spacer()
             Button {
                 print("touched setting")
@@ -79,11 +73,13 @@ struct RootScreen: View {
                     Text("Settings")
                 }
             }
+            .tint(selectedTab == .setting ? Color.tabActiveTint : Color.tabDisableTint)
             Spacer()
         }
-        .padding(.vertical, 10)
-        .background(themeManager.selectedTheme.elevated)
-        .frame(maxWidth: .infinity,alignment: .bottom)
+        .padding(.vertical, 15)
+//        .padding(.horizontal, 50)
+        .background(Color.elevatedBackground)
+        .frame(maxWidth: .infinity, alignment: .bottom)
         .clipShape(
             RoundedRectangle(cornerRadius: 15)
         )

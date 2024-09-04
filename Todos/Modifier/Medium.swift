@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct Medium: ViewModifier {
-    @EnvironmentObject var themeManager: ThemeManager
     func body(content: Content) -> some View {
         content
-            .font(themeManager.selectedTheme.medium)
-            .foregroundStyle(themeManager.selectedTheme.textForeground.i500)
+            .font(.mediumBold)
+            .foregroundStyle(.textDefault)
     }
 }
 

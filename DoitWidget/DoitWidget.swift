@@ -71,12 +71,12 @@ struct DoitWidgetEntryView : View {
                         Text(todo.content)
                             .font(.system(size: 16).bold())
                             .strikethrough(todo.isDone)
-                            .foregroundStyle(Color(hex: 0x575767))
+                            .foregroundStyle(todo.isDone ? Color.textDisabled : Color.textDefault)
                             .bold()
                         Text(todo.isAllDay ? "all day" : formatter.string(from: todo.targetDateTime))
-                            .font(.system(size: 12).bold())
-                            .foregroundStyle(Color(hex: 0xA3A3A3))
-                            .bold()
+                            .font(.captionBold)
+                            .strikethrough(todo.isDone)
+                            .foregroundStyle(Color.textDisabled)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 3)
@@ -88,10 +88,11 @@ struct DoitWidgetEntryView : View {
             if todos.isEmpty {
                 VStack {
                     Text("No tasks")
-                        .font(.system(size: 24).bold())
+                        .font(.headlineBold)
+                        .foregroundStyle(Color.textHeadline)
                     Text("so far so good!")
-                        .font(.system(size: 14).bold())
-                        .foregroundStyle(Color(hex: 0x737373))
+                        .font(.captionBold)
+                        .foregroundStyle(Color.textCaption)
                 }
             }
         }
@@ -104,7 +105,7 @@ struct DoitWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, provider: Provider()) { entry in
             DoitWidgetEntryView(entry: entry)
-                .containerBackground(.white, for: .widget)
+                .containerBackground(Color.background, for: .widget)
         }
         .supportedFamilies([.systemMedium])
     }

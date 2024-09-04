@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct Headline: ViewModifier {
-    @EnvironmentObject var themeManager: ThemeManager
     func body(content: Content) -> some View {
         content
-            .font(themeManager.selectedTheme.headline)
-            .foregroundStyle(themeManager.selectedTheme.textForeground.i900)
+            .font(.headlineBold)
+            .foregroundStyle(Color.textHeadline)
     }
 }
 

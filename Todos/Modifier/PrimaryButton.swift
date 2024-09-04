@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct PrimaryButton: ButtonStyle {
-    @EnvironmentObject var themeManager: ThemeManager
-    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()

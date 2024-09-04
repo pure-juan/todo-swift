@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ListRow: ViewModifier {
-    @EnvironmentObject var themeManager: ThemeManager
-    
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, alignment: .leading)
             .contentShape(Rectangle())
-            .background(themeManager.selectedTheme.background)
+            .background(Color.background)
             .cornerRadius(4)
     }
 }

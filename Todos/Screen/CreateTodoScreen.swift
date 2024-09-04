@@ -12,7 +12,6 @@ struct CreateTodoScreen: View {
         case content
         case dateTime
     }
-    @EnvironmentObject var themeManager: ThemeManager
     @EnvironmentObject var routeManager: RouteManager
     
     @ObservedObject var viewModel = CreateTodoViewModel()
@@ -36,13 +35,13 @@ struct CreateTodoScreen: View {
                         "Content",
                         text: $viewModel.content,
                         prompt: Text("Content")
-                            .foregroundColor(themeManager.selectedTheme.textDisabled)
+                            .foregroundColor(Color.textDisabled)
                     )
                     .focused($focusedField, equals: .content)
-                    .foregroundStyle(themeManager.selectedTheme.textForeground.i500)
+                    .foregroundStyle(Color.textDefault)
                     Divider()
                         .frame(height: 1)
-                        .background(themeManager.selectedTheme.textDisabled)
+                        .background(Color.textDisabled)
                 }
             }
             Spacer()
@@ -56,11 +55,9 @@ struct CreateTodoScreen: View {
                 HStack {
                     Text("~")
                         .font(.title)
-                        .foregroundStyle(themeManager.selectedTheme.textForeground.i500)
+                        .foregroundStyle(Color.textDefault)
                     DatePicker("", selection: $viewModel.targetDateTime, in: Date()..., displayedComponents: viewModel.isAllDay ? [.date]: [.date, .hourAndMinute])
-                        .tint(themeManager.selectedTheme.primary)
-//                        .colorMultiply(themeManager.selectedTheme.textForeground.i500)
-//                        .colorInvert()
+                        .tint(Color.primary)
                         .labelsHidden()
                         .datePickerStyle(.compact)
                         .focused($focusedField, equals: .dateTime)
@@ -93,8 +90,8 @@ struct CreateTodoScreen: View {
                 Text("Done")
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
-                    .background(themeManager.selectedTheme.primary)
-                    .foregroundStyle(themeManager.selectedTheme.primaryForeground)
+                    .background(Color.primaryBackground)
+                    .foregroundStyle(Color.primaryForeground)
                     .cornerRadius(12)
             }
         }
@@ -104,7 +101,7 @@ struct CreateTodoScreen: View {
             alignment: .topLeading
         )
         .padding()
-        .background(themeManager.selectedTheme.background)
+        .background(Color.background)
         .onAppear {
             focusedField = .content
             UIApplication.shared.hideKeyboard()
