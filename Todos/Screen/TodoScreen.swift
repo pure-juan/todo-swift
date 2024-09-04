@@ -101,7 +101,8 @@ struct TodoScreen: View {
                     .frame(height: 35)
                 List {
                     if incompleteTodos.isEmpty {
-                        Text("No remain todos")
+                        Text("All Done!")
+                            .medium()
                             .plainListRow()
                     } else {
                         ForEach(incompleteTodos, id: \.self.id) { todo in
@@ -119,35 +120,18 @@ struct TodoScreen: View {
                             }
                         }
                     }
-                    if !completedTodos.isEmpty {
-                        HStack {
-                            Spacer()
-                                .frame(height: 1)
-                                .background(themeManager.selectedTheme.textDisabled)
-                            Text("Completed")
-                                .caption()
-                                .padding(.horizontal, 15)
-                                .lineLimit(nil)
-                            Spacer()
-                                .frame(height: 1)
-                                .background(themeManager.selectedTheme.textDisabled)
-                        }
+                    
+                    ForEach(completedTodos, id: \.self.id) { todo in
+                        TodoItemView(todo: todo, toggle: { _ in
+                            viewModel.send(.toggleTodo(id: todo.id))
+                        })
+                        .background(themeManager.selectedTheme.background)
                         .plainListRow()
-//                        .background(themeManager.selectedTheme.background)
-//                        .frame(maxWidth: .infinity, alignment: .center)
-                        
-                        ForEach(completedTodos, id: \.self.id) { todo in
-                            TodoItemView(todo: todo, toggle: { _ in
-                                viewModel.send(.toggleTodo(id: todo.id))
-                            })
-                            .background(themeManager.selectedTheme.background)
-                            .plainListRow()
-                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                Button {
-                                    viewModel.send(.removeTodo(id: todo.id))
-                                } label: {
-                                    Label("삭제", systemImage: "trash")
-                                }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button {
+                                viewModel.send(.removeTodo(id: todo.id))
+                            } label: {
+                                Label("삭제", systemImage: "trash")
                             }
                         }
                     }
@@ -192,10 +176,12 @@ struct TodoScreen: View {
                         .clipShape(Circle())
                 }
             }
-            .padding(16)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
         .background(themeManager.selectedTheme.background)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             viewModel.onApear()
         }
