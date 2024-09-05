@@ -54,7 +54,6 @@ struct RootScreen: View {
         HStack {
             Spacer()
             Button {
-                print("touched todo")
                 selectedTab = .todo
             } label: {
                 VStack {
@@ -65,7 +64,6 @@ struct RootScreen: View {
             .tint(selectedTab == .todo ? Color.tabActiveTint: Color.tabDisableTint)
             Spacer()
             Button {
-                print("touched setting")
                 selectedTab = .setting
             } label: {
                 VStack {
@@ -77,7 +75,6 @@ struct RootScreen: View {
             Spacer()
         }
         .padding(.vertical, 15)
-//        .padding(.horizontal, 50)
         .background(Color.elevatedBackground)
         .frame(maxWidth: .infinity, alignment: .bottom)
         .clipShape(

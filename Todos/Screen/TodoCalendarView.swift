@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TodoCalendarView: View {
+    @State var date = Date()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            // TODO: implement custom calendar
+            DatePicker("", selection: $date, displayedComponents: .date)
+                .datePickerStyle(.graphical)
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .background(Color.background)
     }
 }
 

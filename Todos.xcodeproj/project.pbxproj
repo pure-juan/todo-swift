@@ -58,6 +58,7 @@
 		C642724F2C85A6ED002E2761 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642724D2C85A6ED002E2761 /* TodoModel.swift */; };
 		C642725D2C869462002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725C2C869462002E2761 /* HexColor.swift */; };
 		C64272602C869489002E2761 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642725E2C86947E002E2761 /* HexColor.swift */; };
+		C6640E342C89B03700520B70 /* TodoCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6640E332C89B03700520B70 /* TodoCalendarViewModel.swift */; };
 		C6E43A962C806C2400939EF8 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E43A952C806C2400939EF8 /* TodoRowView.swift */; };
 		C6EB0B1F2C870F3100049086 /* TodoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB0B1E2C870F3100049086 /* TodoCalendarView.swift */; };
 		C6EB0B222C870F8200049086 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB0B212C870F8200049086 /* Container.swift */; };
@@ -172,6 +173,7 @@
 		C64272502C85AC46002E2761 /* DoitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoitWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C642725C2C869462002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		C642725E2C86947E002E2761 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		C6640E332C89B03700520B70 /* TodoCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCalendarViewModel.swift; sourceTree = "<group>"; };
 		C6E43A952C806C2400939EF8 /* TodoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowView.swift; sourceTree = "<group>"; };
 		C6EB0B1E2C870F3100049086 /* TodoCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCalendarView.swift; sourceTree = "<group>"; };
 		C6EB0B212C870F8200049086 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				1D450A7F2C84750A00653A37 /* BaseViewModel.swift */,
 				1D450A812C8478B900653A37 /* TodoViewModel.swift */,
 				1D450A882C84B7C500653A37 /* CreateTodoViewModel.swift */,
+				C6640E332C89B03700520B70 /* TodoCalendarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */,
 				1DCB72C92C85FEAF00D7B52C /* DateFormat.swift in Sources */,
 				C642721E2C854621002E2761 /* HideNavigationBar.swift in Sources */,
+				C6640E342C89B03700520B70 /* TodoCalendarViewModel.swift in Sources */,
 				C6EB0B242C87F29100049086 /* SettingScreen.swift in Sources */,
 				1D450A7A2C84739F00653A37 /* Route.swift in Sources */,
 				C642721C2C81AC17002E2761 /* PrimaryButton.swift in Sources */,
