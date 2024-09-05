@@ -13,6 +13,16 @@ struct SettingScreen: View {
             Button {
                 print("touched")
             } label: {
+//                HStack {
+//                    Text("Allow to add past todo")
+//                    Spacer()
+//                    Toggle("", isOn: Binding(
+//                        get: { viewModel.setting.allowAddPastTodo },
+//                        set: { _ in viewModel.toggleAllowAddPastTodo() }
+//                    ))
+//                    .toggleStyle(ToggleCheckboxStyle())
+//                }
+                Spacer()
                 HStack {
                     Image(systemName: "trash")
                     Text("Remove past todos")

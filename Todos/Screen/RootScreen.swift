@@ -63,6 +63,7 @@ struct RootScreen: View {
             }
             .tint(selectedTab == .todo ? Color.tabActiveTint: Color.tabDisableTint)
             Spacer()
+            Spacer()
             Button {
                 selectedTab = .setting
             } label: {
@@ -80,6 +81,7 @@ struct RootScreen: View {
         .clipShape(
             RoundedRectangle(cornerRadius: 15)
         )
+        .shadow(color: Color.elevatedShadow, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         .padding(.horizontal, 16)
     }
 }

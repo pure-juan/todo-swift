@@ -15,16 +15,16 @@ struct TodoScreen: View {
         Todo.self,
         filter: NSPredicate(format: "targetDateTime BETWEEN {%@, %@}", argumentArray: [Date().startOfDate(), Date().endOfDate()])
     ) var todayTodos
-    @ObservedResults(
-        Todo.self,
-        filter: NSPredicate(format: "targetDateTime >= %@", argumentArray: [Date().tomorrow()]),
-        sortDescriptor: SortDescriptor(keyPath: "targetDateTime", ascending: true)
-    ) var futureTodos
-    @ObservedResults(
-        Todo.self,
-        filter: NSPredicate(format: "targetDateTime < %@", argumentArray: [Date().startOfDate()]),
-        sortDescriptor: SortDescriptor(keyPath: "targetDateTime", ascending: true)
-    ) var pastTodos
+//    @ObservedResults(
+//        Todo.self,
+//        filter: NSPredicate(format: "targetDateTime >= %@", argumentArray: [Date().tomorrow()]),
+//        sortDescriptor: SortDescriptor(keyPath: "targetDateTime", ascending: true)
+//    ) var futureTodos
+//    @ObservedResults(
+//        Todo.self,
+//        filter: NSPredicate(format: "targetDateTime < %@", argumentArray: [Date().startOfDate()]),
+//        sortDescriptor: SortDescriptor(keyPath: "targetDateTime", ascending: true)
+//    ) var pastTodos
     
     var sortedTodayTodos: [Todo] {
         return todayTodos.sorted { lhs, rhs in
@@ -45,42 +45,6 @@ struct TodoScreen: View {
             
             // If both tasks are not all-day, compare based on target date and time
             return lhs.targetDateTime <= rhs.targetDateTime
-            //            // Long
-            //            if lhs.isDone {
-            //                if !rhs.isDone {
-            //                    return false
-            //                }
-            //                if lhs.isAllDay {
-            //                    if !rhs.isAllDay {
-            //                        return true
-            //                    }
-            //
-            //                    return lhs.createdAt <= rhs.createdAt
-            //                } else {
-            //                    if rhs.isAllDay {
-            //                        return false
-            //                    }
-            //
-            //                    return lhs.targetDateTime <= rhs.targetDateTime
-            //                }
-            //            } else {
-            //                if rhs.isDone {
-            //                    return true
-            //                }
-            //                if lhs.isAllDay {
-            //                    if !rhs.isAllDay {
-            //                        return true
-            //                    }
-            //
-            //                    return lhs.createdAt <= rhs.createdAt
-            //                } else {
-            //                    if rhs.isAllDay {
-            //                        return false
-            //                    }
-            //
-            //                    return lhs.targetDateTime <= rhs.targetDateTime
-            //                }
-            //            }
         }
     }
     

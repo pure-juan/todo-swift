@@ -16,16 +16,9 @@ class TodoModel {
         return realm.db.objects(Todo.self)
     }
     
-    func list() -> [Todo] {
-        let todos = realm.db.objects(Todo.self).sorted { lhs, rhs in
-            if lhs.isDone {
-                return false
-            } else {
-                if lhs.isAllDay != rhs.isAllDay {
-                    return true
-                }
-                return lhs.targetDateTime < rhs.targetDateTime
-            }
+    func list(date: Date) -> Results<Todo> {
+        let todos = realm.db.objects(Todo.self).where {
+            $0.targetDateTime.contains(date.startOfDate()...date.endOfDate())
         }
         
         return todos
