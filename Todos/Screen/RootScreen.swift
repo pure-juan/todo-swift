@@ -83,5 +83,8 @@ struct RootScreen: View {
         )
         .shadow(color: Color.elevatedShadow, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         .padding(.horizontal, 16)
+        .onAppear {
+            NotificationManager.instance.askPermission()
+        }
     }
 }

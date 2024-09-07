@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>Doit provides notifications to help you efficiently manage your to-do list. You will receive reminders at the scheduled times to keep you on track with your tasks and ensure you don’t miss any important deadlines.</string>
+</dict>
+</plist>

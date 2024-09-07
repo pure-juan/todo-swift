@@ -24,14 +24,16 @@ class TodoModel {
         return todos
     }
     
-    func add(todo: Todo) {
+    func add(todo: Todo) -> Todo? {
         do {
             try realm.db.write {
                 realm.db.add(todo)
                 WidgetCenter.shared.reloadAllTimelines()
             }
+            return todo
         } catch {
             print(error)
+            return nil
         }
     }
     

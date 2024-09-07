@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2B9F142C8C79FC00666025 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B9F132C8C79FC00666025 /* NotificationManager.swift */; };
+		1D2B9F162C8C7AD800666025 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B9F152C8C7AD800666025 /* Notification.swift */; };
 		1D450A7A2C84739F00653A37 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D450A792C84739F00653A37 /* Route.swift */; };
 		1D450A802C84750A00653A37 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D450A7F2C84750A00653A37 /* BaseViewModel.swift */; };
 		1D450A822C8478B900653A37 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D450A812C8478B900653A37 /* TodoViewModel.swift */; };
@@ -128,6 +130,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D2B9F132C8C79FC00666025 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		1D2B9F152C8C7AD800666025 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		1D2B9F172C8C7EF100666025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D450A792C84739F00653A37 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		1D450A7F2C84750A00653A37 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		1D450A812C8478B900653A37 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
@@ -219,6 +224,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D2B9F122C8C79EF00666025 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				1D2B9F132C8C79FC00666025 /* NotificationManager.swift */,
+				1D2B9F152C8C7AD800666025 /* Notification.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		1D450A772C84738E00653A37 /* Route */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +316,8 @@
 		C602B24A2C7FFBD2007CE4E0 /* Todos */ = {
 			isa = PBXGroup;
 			children = (
+				1D2B9F172C8C7EF100666025 /* Info.plist */,
+				1D2B9F122C8C79EF00666025 /* Notification */,
 				1DCB72C72C85FEA300D7B52C /* Util */,
 				C64272492C85A684002E2761 /* Model */,
 				1D450A8A2C84BA0000653A37 /* Extension */,
@@ -628,6 +644,7 @@
 				1DF38B982C8A01770019AB48 /* Setting.swift in Sources */,
 				C602B24C2C7FFBD2007CE4E0 /* TodosApp.swift in Sources */,
 				1DCB72C92C85FEAF00D7B52C /* DateFormat.swift in Sources */,
+				1D2B9F162C8C7AD800666025 /* Notification.swift in Sources */,
 				C642721E2C854621002E2761 /* HideNavigationBar.swift in Sources */,
 				C6640E342C89B03700520B70 /* TodoCalendarViewModel.swift in Sources */,
 				C6EB0B242C87F29100049086 /* SettingScreen.swift in Sources */,
@@ -642,6 +659,7 @@
 				C642720A2C8191AD002E2761 /* RootScreen.swift in Sources */,
 				C64272222C854DD4002E2761 /* Caption.swift in Sources */,
 				C642724B2C85A6B0002E2761 /* RealmManager.swift in Sources */,
+				1D2B9F142C8C79FC00666025 /* NotificationManager.swift in Sources */,
 				C602B27A2C800667007CE4E0 /* TodoScreen.swift in Sources */,
 				C642725D2C869462002E2761 /* HexColor.swift in Sources */,
 				C602B2802C800C28007CE4E0 /* Todo.swift in Sources */,
@@ -840,6 +858,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Todos/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Doit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -890,6 +909,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Todos/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Doit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

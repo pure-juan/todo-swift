@@ -37,6 +37,8 @@ struct CreateTodoScreen: View {
                         prompt: Text("Content")
                             .foregroundColor(Color.textDisabled)
                     )
+                    .scrollDismissesKeyboard(.immediately)
+                    .autocorrectionDisabled(true)
                     .focused($focusedField, equals: .content)
                     .foregroundStyle(Color.textDefault)
                     Divider()
@@ -103,7 +105,9 @@ struct CreateTodoScreen: View {
         .padding()
         .background(Color.background)
         .onAppear {
-            focusedField = .content
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                focusedField = .content
+            }
             UIApplication.shared.hideKeyboard()
         }
     }

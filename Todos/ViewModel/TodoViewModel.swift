@@ -27,8 +27,10 @@ final class TodoViewModel: BaseViewModel {
         switch action {
         case let .toggleTodo(todoId):
             todoModel.toggle(todoId: todoId)
+            // TODO: cancel notification when task is done
         case let .removeTodo(todoId):
             todoModel.remove(todoId: todoId)
+            NotificationManager.instance.cancel(notificationId: todoId)
         }
     }
     

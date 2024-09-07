@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct TodosApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             RootScreen()
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        NotificationManager.instance.clearBadge()
     }
 }

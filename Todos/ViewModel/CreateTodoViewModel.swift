@@ -20,7 +20,14 @@ class CreateTodoViewModel: ObservableObject {
             return
         }
         
-        todoModel.add(todo: Todo(content: content, targetDateTime: targetDateTime, isAllDay: isAllDay))
+        let todo = todoModel.add(todo: Todo(content: content, targetDateTime: targetDateTime, isAllDay: isAllDay))
+        if let todo = todo {
+            var notificationTime = todo.targetDateTime
+            if todo.isAllDay {
+                notificationTime = todo.targetDateTime.endOfDate()
+            }
+            NotificationManager.instance.schedule(notification: Notification(id: todo.id, title: "Don’t Forget Today’s Task!", subtitle: "Check [\(todo.content)] now", dateTime: notificationTime))
+        }
     }
     
     func validate() -> Bool {
