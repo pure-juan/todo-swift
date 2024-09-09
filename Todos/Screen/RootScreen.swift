@@ -17,7 +17,7 @@ struct RootScreen: View {
         case setting
     }
     
-    @State var selectedTab: Tab = .todo
+    @State var selectedTab: Tab = .setting
     
     var body: some View {
         NavigationStack(path: $navManager.path) {

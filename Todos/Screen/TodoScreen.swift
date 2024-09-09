@@ -15,16 +15,6 @@ struct TodoScreen: View {
         Todo.self,
         filter: NSPredicate(format: "targetDateTime BETWEEN {%@, %@}", argumentArray: [Date().startOfDate(), Date().endOfDate()])
     ) var todayTodos
-//    @ObservedResults(
-//        Todo.self,
-//        filter: NSPredicate(format: "targetDateTime >= %@", argumentArray: [Date().tomorrow()]),
-//        sortDescriptor: SortDescriptor(keyPath: "targetDateTime", ascending: true)
-//    ) var futureTodos
-//    @ObservedResults(
-//        Todo.self,
-//        filter: NSPredicate(format: "targetDateTime < %@", argumentArray: [Date().startOfDate()]),
-//        sortDescriptor: SortDescriptor(keyPath: "targetDateTime", ascending: true)
-//    ) var pastTodos
     
     var sortedTodayTodos: [Todo] {
         return todayTodos.sorted { lhs, rhs in

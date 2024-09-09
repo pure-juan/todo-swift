@@ -9,17 +9,19 @@ import SwiftUI
 
 @main
 struct TodosApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
             RootScreen()
         }
-    }
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        NotificationManager.instance.clearBadge()
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                NotificationManager.instance.clearBadge()
+            default:
+                return
+            }
+        }
     }
 }

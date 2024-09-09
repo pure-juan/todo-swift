@@ -5,6 +5,6 @@
 	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>NSUserNotificationsUsageDescription</key>
-	<string>Doit provides notifications to help you efficiently manage your to-do list. You will receive reminders at the scheduled times to keep you on track with your tasks and ensure you don’t miss any important deadlines.</string>
+	<string>Doit provides notifications to help you efficiently manage your to-do list.</string>
 </dict>
 </plist>

@@ -19,6 +19,15 @@ struct CreateTodoScreen: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            HStack {
+                Button {
+                    routeManager.path.removeLast()
+                } label: {
+                    Label("Today Tasks", systemImage: "chevron.left")
+                }
+            }
+            .padding(.bottom, 10)
+            .frame(maxWidth: .infinity, alignment: .leading)
             Text("Add a task")
                 .headline()
             Spacer()
@@ -58,8 +67,8 @@ struct CreateTodoScreen: View {
                     Text("~")
                         .font(.title)
                         .foregroundStyle(Color.textDefault)
-                    DatePicker("", selection: $viewModel.targetDateTime, in: Date()..., displayedComponents: viewModel.isAllDay ? [.date]: [.date, .hourAndMinute])
-                        .tint(Color.primary)
+                    DatePicker("", selection: $viewModel.targetDateTime, displayedComponents: viewModel.isAllDay ? [.date]: [.date, .hourAndMinute])
+                        .tint(Color.primaryBackground)
                         .labelsHidden()
                         .datePickerStyle(.compact)
                         .focused($focusedField, equals: .dateTime)
