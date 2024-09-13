@@ -146,6 +146,7 @@
 		1DE55E8B2C820B5D00ABE643 /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		1DF38B8F2C88A0040019AB48 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1DF38B972C8A01770019AB48 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		1DFA1D6C2C9475C400934885 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C602B2482C7FFBD2007CE4E0 /* Todos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C602B24B2C7FFBD2007CE4E0 /* TodosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosApp.swift; sourceTree = "<group>"; };
 		C602B24F2C7FFBD4007CE4E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -291,6 +292,7 @@
 		C602B23F2C7FFBD2007CE4E0 = {
 			isa = PBXGroup;
 			children = (
+				1DFA1D6C2C9475C400934885 /* README.md */,
 				C6EB0B252C8826D200049086 /* Colors.xcassets */,
 				C64272502C85AC46002E2761 /* DoitWidgetExtension.entitlements */,
 				C602B24A2C7FFBD2007CE4E0 /* Todos */,
